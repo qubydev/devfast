@@ -28,11 +28,11 @@ export function PkgInstallCmd({ pkg }: { pkg: string }) {
 
       <span className="text-muted-foreground">$</span>
 
-      <span className="flex items-center gap-1 truncate">
-        <span className="text-blue-600 font-semibold">npx</span>
-        <span className="text-foreground">devfast</span>
-        <span className="text-foreground">create</span>
-        <span className="text-primary font-semibold">{pkg}</span>
+      <span className="flex items-center gap-1 truncate text-muted-foreground">
+        <span>npx</span>
+        <span>devfast</span>
+        <span>create</span>
+        <span className="text-blue-500 font-semibold">{pkg}</span>
       </span>
 
       <Button

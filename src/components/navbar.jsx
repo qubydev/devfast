@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel } from "./ui/dropdown-menu";
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { LogoutButton } from "@/components/client/logout-button";
+import { SiNpm } from "react-icons/si";
 
 export default async function Navbar() {
 
@@ -31,8 +32,9 @@ export default async function Navbar() {
 
                 <div className="flex-1" />
 
-                <a href="https://www.npmjs.com/package/devfast">
-                    <Button>
+                <a href="https://www.npmjs.com/package/devfast" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-[#CD3737] hover:bg-[#CD3737] hover:opacity-80">
+                        <SiNpm />
                         Install
                     </Button>
                 </a>
