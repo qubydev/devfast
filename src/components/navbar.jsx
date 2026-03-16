@@ -31,11 +31,11 @@ export default async function Navbar() {
 
                 <div className="flex-1" />
 
-                <Link href="/install">
+                <a href="https://www.npmjs.com/package/devfast">
                     <Button>
                         Install
                     </Button>
-                </Link>
+                </a>
 
                 {session && (
                     <DropdownMenu>
