@@ -5,7 +5,7 @@ import connectDB from "@/lib/db";
 import Template from "@/models/template";
 import { z } from "zod";
 
-export const postSchema = z.object({
+const postSchema = z.object({
   id: z
     .string()
     .trim()

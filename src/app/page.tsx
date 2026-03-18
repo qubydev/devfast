@@ -4,13 +4,13 @@ import { SearchBar } from '@/components/client/search-bar';
 import { Button } from '@/components/ui/button';
 import { useState, useCallback, useEffect } from 'react';
 import { TemplateType } from '@/models/template';
-import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { FaGithub } from 'react-icons/fa';
 import { IoMdDownload } from "react-icons/io";
 import { PkgInstallCmd } from '@/components/pkg-install-cmd';
 import { formatNumberAbbreviated } from '@/lib/helpers';
 import { Spinner } from '@/components/ui/spinner';
 import toast from 'react-hot-toast';
+import Link from 'next/link';
 
 type Pagination = {
   page: number;
@@ -91,12 +91,9 @@ export default function Home() {
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex flex-col gap-1.5">
-                      <div className="flex items-center gap-2">
+                      <Link href={`/${template.id}`} className="hover:text-blue-500 transition-colors duration-300 hover:underline">
                         <h3 className="text-xl font-bold tracking-tight">{template.title}</h3>
-                        {template.trusted && (
-                          <RiVerifiedBadgeFill className="text-blue-500 size-5" />
-                        )}
-                      </div>
+                      </Link>
                       <span className="text-primary/80 text-xs font-medium">
                         {template.id}
                       </span>
@@ -110,7 +107,9 @@ export default function Home() {
 
                   {template.description && (
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      {template.description}
+                      {template.description.length > 80
+                        ? template.description.slice(0, 80) + "..."
+                        : template.description}
                     </p>
                   )}
 
